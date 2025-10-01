@@ -1,8 +1,12 @@
-{{
+{{{
 
-  "version": 2,  "public": true,
+  "framework": null,
 
-  "builds": [  "cleanUrls": true
+  "buildCommand": null,  "version": 2,  "public": true,
+
+  "outputDirectory": "."
+
+}  "builds": [  "cleanUrls": true
 
     {}
       "src": "package.json",

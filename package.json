@@ -1,11 +1,5 @@
 {
   "name": "hamoa-resort",
   "version": "1.0.0",
-  "scripts": {
-    "build": "cp -r * public/",
-    "start": "serve public"
-  },
-  "dependencies": {
-    "serve": "^14.0.0"
-  }
+  "private": true
 }
