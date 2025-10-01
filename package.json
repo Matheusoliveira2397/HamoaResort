@@ -2,8 +2,8 @@
   "name": "hamoa-resort",
   "version": "1.0.0",
   "scripts": {
-    "build": "xcopy /E /I /Y src\\* dist\\",
-    "start": "serve dist"
+    "build": "cp -r * public/",
+    "start": "serve public"
   },
   "dependencies": {
     "serve": "^14.0.0"

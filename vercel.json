@@ -1,0 +1,15 @@
+{{
+
+  "version": 2,  "public": true,
+
+  "builds": [  "cleanUrls": true
+
+    {}
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "public"
+      }
+    }
+  ]
+}
