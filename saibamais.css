@@ -92,19 +92,26 @@ body::before {
 .container {
     margin-top: 120px;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
     z-index: 1;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .video-container {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 2rem auto;
     background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    padding: 30px;
     border-radius: 15px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -115,7 +122,7 @@ body::before {
     display: block;
     border-radius: 8px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-height: 70vh;
+    max-height: 80vh;
     object-fit: contain;
     background: black;
 }
@@ -152,18 +159,20 @@ body::before {
     position: relative;
     width: 100%;
     margin: 2rem 0;
-    background: #f8f9fa;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px 0;
-    border-radius: 12px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .carousel-container {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.5rem;
+    padding: 1.5rem;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -185,12 +194,12 @@ body::before {
 
 .photo-carousel::before {
     left: 0;
-    background: linear-gradient(to right, #f8f9fa, transparent);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent);
 }
 
 .photo-carousel::after {
     right: 0;
-    background: linear-gradient(to left, #f8f9fa, transparent);
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
 }
 
 .carousel-container img {
@@ -235,21 +244,26 @@ body::before {
 }
 
 .virtual-broker {
-    background-color: white;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
     padding: 2rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .virtual-broker h2 {
-    color: #333;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 .virtual-broker p {
-    color: #666;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .faq-container {
