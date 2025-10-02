@@ -8,8 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 1; i <= totalImages; i++) {
         const img = document.createElement('img');
         // Padroniza o nome do arquivo para sempre ter dois dígitos
-        const imageNumber = i < 10 ? `0${i}` : i;
-        const fileName = i === 1 ? 'hamoa1.jpeg' : `Hamoa${i}.jpeg`;
+        const fileName = i === 1 ? 'hamoa1.jpeg' : 
+                   i === 2 ? 'hamoa2.jpeg' :
+                   i === 3 ? 'hamoa3.jpeg' :
+                   i === 4 ? 'hamoa4.jpeg' :
+                   i === 5 ? 'hamoa5.jpeg' :
+                   i === 6 ? 'hamoa6.jpeg' :
+                   i === 7 ? 'hamoa7.jpeg' :
+                   i === 8 ? 'hamoa8.jpeg' :
+                   i === 9 ? 'hamoa9.jpeg' :
+                   `Hamoa${i}.jpeg`;
         img.src = fileName;
         img.alt = `Imagem ${i} do Hamoa Resort`;
         if (i === 1) {
