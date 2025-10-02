@@ -27,14 +27,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.querySelector('.carousel-button.next');
     const totalImages = 30;
 
-    // Load all images
-    for (let i = 1; i <= totalImages; i++) {
-        const img = document.createElement('img');
-        const fileName = i <= 9 ? `hamoa${i}.jpeg` : `Hamoa${i}.jpeg`;
-        img.src = fileName;
-        img.alt = `Imagem ${i} do Hamoa Resort`;
-        carousel.appendChild(img);
+    if (carousel) {
+        // Função para carregar imagem com tratamento de erro
+        const loadImage = (index) => {
+            const img = document.createElement('img');
+            const fileName = index <= 9 ? `hamoa${index}.jpeg` : `Hamoa${index}.jpeg`;
+            
+            // Adiciona listener para tratar erros de carregamento
+            img.onerror = () => {
+                console.error(`Erro ao carregar imagem: ${fileName}`);
+                img.src = 'hamoa1.jpeg'; // Fallback para primeira imagem
+            };
+
+            img.src = fileName;
+            img.alt = `Imagem ${index} do Hamoa Resort`;
+            carousel.appendChild(img);
+
+            // Adiciona efeito de fade-in quando a imagem carregar
+            img.onload = () => {
+                img.style.opacity = '1';
+            };
+        };
+
+        // Carrega todas as imagens
+        for (let i = 1; i <= totalImages; i++) {
+            loadImage(i);
+        }
+    } else {
+        console.error('Carousel container não encontrado');
     }
+
     // Navigation buttons
     prevButton.addEventListener('click', () => {
         carousel.scrollBy({ left: -320, behavior: 'smooth' });
