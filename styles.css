@@ -33,6 +33,9 @@ body {
     object-fit: cover;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    will-change: opacity;
+    backface-visibility: hidden;
 }
 
 .carousel img.active {
