@@ -28,8 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalImages = 30;
 
     // Load all images
-    for (let i = 1; i <= totalImages; i++) {
+     for (let i = 1; i <= totalImages; i++) {
         const img = document.createElement('img');
+        // Padroniza o nome do arquivo para sempre ter dois dígitos
         const fileName = i === 1 ? 'Hamoa1.jpeg' : 
                    i === 2 ? 'Hamoa2.jpeg' :
                    i === 3 ? 'Hamoa3.jpeg' :
@@ -42,7 +43,11 @@ document.addEventListener('DOMContentLoaded', function() {
                    `Hamoa${i}.jpeg`;
         img.src = fileName;
         img.alt = `Imagem ${i} do Hamoa Resort`;
+        if (i === 1) {
+            img.classList.add('active');
+        }
         carousel.appendChild(img);
+        images.push(img);
     }
 
     // Navigation buttons
