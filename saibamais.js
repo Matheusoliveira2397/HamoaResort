@@ -1,23 +1,23 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Tab switching functionality
-    const tabButtons = document.querySelectorAll('.tab-button');
+    // Menu selection functionality
+    const menuItems = document.querySelectorAll('.menu-item');
     const sections = document.querySelectorAll('.content-section');
+    const contentWrapper = document.querySelector('.content-wrapper');
+    const backButton = document.querySelector('.back-button');
+    const mainMenu = document.querySelector('.main-menu');
 
-    // Ativar primeira aba por padrão
-    if (tabButtons.length > 0 && sections.length > 0) {
-        tabButtons[0].classList.add('active');
-        sections[0].classList.add('active');
-    }
+    // Inicialmente esconde o content wrapper
+    contentWrapper.style.display = 'none';
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabName = button.dataset.tab;
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const tabName = item.dataset.tab;
             
-            // Update active button
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
+            // Hide main menu and show content
+            mainMenu.style.display = 'none';
+            contentWrapper.style.display = 'block';
             
-            // Update active section
+            // Show correct section
             sections.forEach(section => {
                 section.classList.remove('active');
                 if (section.id === tabName) {
@@ -25,6 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+    });
+
+    // Back button functionality
+    backButton.addEventListener('click', () => {
+        contentWrapper.style.display = 'none';
+        mainMenu.style.display = 'grid';
+        sections.forEach(section => section.classList.remove('active'));
     });
 
     // Photo carousel functionality
