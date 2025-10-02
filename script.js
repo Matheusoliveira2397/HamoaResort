@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let i = 1; i <= totalImages; i++) {
         const img = document.createElement('img');
         // Padroniza o nome do arquivo para sempre ter dois dígitos
-        const fileName = i <= 9 ? `hamoa${i}.jpeg` : `Hamoa${i}.jpeg`;
+        const imageNumber = i < 10 ? `0${i}` : i;
+        const fileName = `Hamoa${imageNumber}.jpeg`;
         img.src = fileName;
         img.alt = `Imagem ${i} do Hamoa Resort`;
         if (i === 1) {

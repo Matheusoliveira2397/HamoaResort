@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Função para carregar imagem com tratamento de erro
         const loadImage = (index) => {
             const img = document.createElement('img');
-            const fileName = index <= 9 ? `hamoa${index}.jpeg` : `Hamoa${index}.jpeg`;
+            const imageNumber = index < 10 ? `0${index}` : index;
+            const fileName = `Hamoa${imageNumber}.jpeg`;
             
             // Adiciona listener para tratar erros de carregamento
             img.onerror = () => {
                 console.error(`Erro ao carregar imagem: ${fileName}`);
-                img.src = 'hamoa1.jpeg'; // Fallback para primeira imagem
+                img.src = 'Hamoa01.jpeg'; // Fallback para primeira imagem
             };
 
             img.src = fileName;
