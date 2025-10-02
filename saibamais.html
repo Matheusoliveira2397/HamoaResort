@@ -13,8 +13,24 @@
         <a href="index.html" class="nav-brand">Hamoa Resort</a>
     </nav>
 
+    <div class="menu-tabs">
+        <button class="tab-button active" data-tab="photos">Menu de Fotos</button>
+        <button class="tab-button" data-tab="broker">Corretor Virtual</button>
+    </div>
+
     <div class="container">
-        <section class="virtual-broker">
+        <section id="photos" class="content-section active">
+            <h2>Galeria de Fotos</h2>
+            <div class="photo-carousel">
+                <button class="carousel-button prev">&lt;</button>
+                <div class="carousel-container">
+                    <!-- As imagens serão inseridas aqui via JavaScript -->
+                </div>
+                <button class="carousel-button next">&gt;</button>
+            </div>
+        </section>
+
+        <section id="broker" class="content-section">
             <h2>Corretor Virtual</h2>
             <p>Tire suas dúvidas sobre o Hamoa Resort com nosso corretor virtual. Clique nas perguntas abaixo para ouvir as respostas:</p>
             
