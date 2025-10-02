@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load all images
     for (let i = 1; i <= totalImages; i++) {
         const img = document.createElement('img');
-        // Padroniza o nome do arquivo para sempre ter dois dígitos
-        const imageNumber = i < 10 ? `0${i}` : i;
-        const fileName = `Hamoa${imageNumber}.jpeg`;
-        console.log('Carregando imagem:', fileName); // Para debug
+        // Padroniza o nome do arquivo para sempre ter dois dígitos e a primeira letra maiúscula
+        const num = i < 10 ? `0${i}` : `${i}`;
+        const fileName = `Hamoa${num}.jpeg`;
+        console.log('Carregando imagem:', fileName);
         img.src = fileName;
         img.alt = `Imagem ${i} do Hamoa Resort`;
         img.onerror = () => {

@@ -31,10 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Função para carregar imagem com tratamento de erro
         const loadImage = (index) => {
             const img = document.createElement('img');
-            const imageNumber = index < 10 ? `0${index}` : index;
-            const fileName = `Hamoa${imageNumber}.jpeg`;
+            // Padroniza o nome do arquivo para sempre ter dois dígitos e a primeira letra maiúscula
+            const num = index < 10 ? `0${index}` : `${index}`;
+            const fileName = `Hamoa${num}.jpeg`;
             
-            console.log('Carregando imagem na galeria:', fileName); // Para debug
+            console.log('Carregando imagem na galeria:', fileName);
             
             img.onerror = () => {
                 console.error(`Erro ao carregar imagem: ${fileName}`);
