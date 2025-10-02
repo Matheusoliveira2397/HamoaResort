@@ -34,14 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const imageNumber = index < 10 ? `0${index}` : index;
             const fileName = `Hamoa${imageNumber}.jpeg`;
             
-            // Adiciona listener para tratar erros de carregamento
+            console.log('Carregando imagem na galeria:', fileName); // Para debug
+            
             img.onerror = () => {
                 console.error(`Erro ao carregar imagem: ${fileName}`);
-                img.src = 'Hamoa01.jpeg'; // Fallback para primeira imagem
             };
 
             img.src = fileName;
             img.alt = `Imagem ${index} do Hamoa Resort`;
+            img.loading = 'lazy'; // Adiciona carregamento lazy para melhor performance
             carousel.appendChild(img);
 
             // Adiciona efeito de fade-in quando a imagem carregar

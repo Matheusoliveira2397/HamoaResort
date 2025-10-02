@@ -10,8 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Padroniza o nome do arquivo para sempre ter dois dígitos
         const imageNumber = i < 10 ? `0${i}` : i;
         const fileName = `Hamoa${imageNumber}.jpeg`;
+        console.log('Carregando imagem:', fileName); // Para debug
         img.src = fileName;
         img.alt = `Imagem ${i} do Hamoa Resort`;
+        img.onerror = () => {
+            console.error(`Erro ao carregar imagem: ${fileName}`);
+        };
         if (i === 1) {
             img.classList.add('active');
         }
