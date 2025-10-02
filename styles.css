@@ -11,9 +11,10 @@ body {
 
 .hero {
     position: relative;
-    height: 100vh;
+    height: 80vh; /* Reduzindo para 80% da altura da tela */
     width: 100%;
     overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .carousel {
@@ -78,12 +79,28 @@ h1 {
 }
 
 .video-section {
-    padding: 4rem 2rem;
+    padding: 2rem;
     background-color: #f8f9fa;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.video-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-size: 2.5rem;
 }
 
 .video-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     padding-bottom: 56.25%; /* Proporção 16:9 */
@@ -91,6 +108,7 @@ h1 {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .video-container iframe {
